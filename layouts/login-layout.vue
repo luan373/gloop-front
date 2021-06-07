@@ -3,7 +3,7 @@
     <div class="login-card">
 
       <div class="card-title">
-        <h1>Login do Cliente</h1>
+        <h1>Gloop</h1>
       </div>
 
       <div class="content">

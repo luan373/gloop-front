@@ -23,7 +23,7 @@
 </template>
 
 <style lang="scss">
-$primary:			hsl(258, 61%, 55%);
+$primary:			#fff;
 $purple-darker:		hsl(0, 0%, 21%);
 $purple-dark:   	hsl(0, 0%, 29%);
 $purple:         	hsl(0, 0%, 48%);
@@ -43,14 +43,11 @@ $purple-lighter: 	hsl(0, 0%, 86%);
 		width: 24rem;
 		box-shadow: 0 0 7px 0 rgba(0, 0, 0, 0.11);
 
-		.card-title {
-			background-color: darken($primary, 5%);
-			padding: 2rem;
-
+		.card-title {			
 			h1 {
-				color: #fff;
+				//color: #67ef7e;
 				text-align: center;
-				font-size: 1.2rem;
+				font-size: 3.2rem;
 			}
 		}
 
@@ -80,8 +77,7 @@ $purple-lighter: 	hsl(0, 0%, 86%);
 		async userLogin() {
 			try {
 				this.loading = true;
-				await this.$auth.loginWith('local', { data: this.login });
-				this.$router.push('/');
+				await this.$auth.loginWith('local', { data: this.login }).then(() => this.$router.push('/'));
 			} catch (err) {		
 				this.loading = false;		
 				this.hasError = true;

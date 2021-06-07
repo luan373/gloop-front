@@ -37,6 +37,7 @@
         No other internal dependency
       </card>
     </div>
+    {{ this.books }}
   </section>
 </template>
 
@@ -48,6 +49,19 @@ export default {
 
   components: {
     Card
+  },
+  data() {
+		return {
+			books: []
+    }      
+  },
+  created() {
+    this.getBooks();
+  },
+  methods: {
+    async getBooks() {
+      this.books = await this.$axios.$get('/booking');     
+    }
   }
 }
 </script>
