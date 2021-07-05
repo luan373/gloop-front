@@ -21,11 +21,15 @@ export default {
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [    
     // SCSS file in the project
-    '@/assets/css/main.scss'
+    '@/assets/css/main.scss',
+    'quill/dist/quill.snow.css',
+    'quill/dist/quill.bubble.css',
+    'quill/dist/quill.core.css'
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
+    { src: '~plugins/nuxt-quill-plugin', ssr: false }
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -62,6 +66,13 @@ export default {
         path: '/login',
         components: {
           default: resolve(__dirname, 'pages/login.vue'), // or routes[index].component
+        }
+      }),
+      routes.push({
+        path: '/questao/salvarQuestao/:idQuestao',
+        name: 'alterarQuestao',
+        components: {
+          default: resolve(__dirname, 'pages/questao/salvarQuestao.vue'), // or routes[index].component
         }
       })
     }

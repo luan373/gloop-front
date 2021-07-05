@@ -1,5 +1,5 @@
 <template>
-  <section class="section">
+  <section class="section">    
     <div class="columns is-mobile">
       <card
         title="Free"
@@ -60,7 +60,7 @@ export default {
   },
   methods: {
     async getBooks() {
-      this.books = await this.$axios.$get('/booking');     
+      this.books = await this.$axios.$get('/alternativa');
     }
   }
 }

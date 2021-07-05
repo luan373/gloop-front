@@ -1,27 +1,30 @@
 <template>
   <div>
-    <b-navbar class="is-success">
-        <template #brand>
+    <b-navbar>
+        <!--<template #brand>
             <b-navbar-item tag="router-link" :to="{ path: '/' }">
-                <img
-                    src="https://www.coolgenerator.com/Data/Textdesign/202106/0a166f8ea18da26232a48e381dc02e19.png"
+                <img 
+                    src="~/assets/gloop.png"
                     alt="Lightweight UI components for Vue.js based on Bulma"
                 >
             </b-navbar-item>
-        </template>
+        </template> -->
         <template #start>
-            <b-navbar-item href="#">
-                Home
+            <b-navbar-item>
+              <NuxtLink to="/" >Home</NuxtLink>
             </b-navbar-item>
-            <b-navbar-item href="#">
-                Documentation
+            <b-navbar-item>
+              <NuxtLink to="/materia/listarMateria" >Matéria</NuxtLink>
+            </b-navbar-item>
+            <b-navbar-item>
+              <NuxtLink to="/questao/listarQuestao" >Questões</NuxtLink>
             </b-navbar-item>
             <b-navbar-dropdown label="Info">
                 <b-navbar-item href="#">
-                    About
+                  About
                 </b-navbar-item>
                 <b-navbar-item href="#">
-                    Contact
+                  Contact
                 </b-navbar-item>
             </b-navbar-dropdown>
         </template>
@@ -47,22 +50,6 @@
 </template>
 
 <script>
-export default {
-  data () {
-    return {
-      items: [
-        {
-          title: 'Home',
-          icon: 'home',
-          to: { name: 'index' }
-        },
-        {
-          title: 'Inspire',
-          icon: 'lightbulb',
-          to: { name: 'inspire' }
-        }
-      ]
-    }
-  }
+export default {  
 }
 </script>
